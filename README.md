@@ -1,7 +1,7 @@
 Talk
 ====
 
-Talk is a programming language with one defining feature: you can declare functions to accept arguments at any place in the declaration instead of only at the end. The following function declarations, for example, will be valid in this language:
+Talk is a programming language with the following defining feature: you can declare functions to accept arguments at any place in the declaration instead of only at the end. The following function declarations, for example, will be valid in this language:
 
     (argument1)functionName(argument2)
 or
