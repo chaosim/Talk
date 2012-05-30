@@ -38,4 +38,4 @@ When the compiler encounters a function call, it starts matching it character by
 Currently we're aiming for the compiler to emit Python. We'll think about alternatives later.
 
 ####Case sensitivity####
-May be Talk should be case insensitive. That way, you can capitalize reserved words, such as 'if', if the occur at the beginning of a 'sentence'.
+May be Talk should be case insensitive. That way, you can capitalize reserved words, such as 'if', if the occur at the beginning of a 'sentence' and keep them all small in other situations.
