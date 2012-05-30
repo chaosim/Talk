@@ -13,16 +13,16 @@ I believe this feature will enable programs that are more expressive and unambig
 ####Some design ideas####
 Perhaps we can allow a function to be composed of interchangeable parts. For instance, in the example above, we can allow 'GreaterThan' to be substituted by 'LessThan' without the programmer having to declare two full declarations whose leading portions are identical. This will bring orthgonality to the design.
 
-Also, can we get rid of those parenthesis? And may be we can allow spaces between words in the function name. That'll make the function call read like a sentence. For example:
+Also, could we get rid of those parenthesis? And may be we can allow spaces between words in the function name. That'll make the function call read like a sentence. For example:
 
     Get first 2 items in [12, 2, 8, 33, 9] greater than 10
  
 ####Object orientation####
-We can have classes with methods in Talk, but we won’t be restricted to calling them in the prevalent way which is
+We can have classes with methods in Talk, but we won’t be restricted to calling them in the prevalent way, which is:
     
     objectName.functionName(arguments…)
     
-We are instead free call them using Talk's peculiar syntax:
+We are instead free to call them using Talk's peculiar syntax:
     
     AMethodOf(objectName)Taking(someArgument)ThatCanBeCalledInThis(“way”)
  
