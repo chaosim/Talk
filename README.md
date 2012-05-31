@@ -32,10 +32,9 @@ An interesting consequence of this is that the period ('.') is no longer used in
     Get first 2 items in [12, 2, 8, 33, 9] greater than 10.
  
 ####Implementation####
-When the compiler encounters a function call, it starts matching it character by character with a trie of function declarations it knows about. If there's a match, it compiles the call. Else it raises an error.
+When the compiler/interpreter encounters a function call, it starts matching it character by character with a trie of function declarations it knows about. If there's a match, it compiles the call. Else it raises an error.
 
 ####Target language####
-Currently we're aiming for the compiler to emit Python. We'll think about alternatives later.
-
+Currently we're aiming to emit Python from the compiler. Alternatively, we can go the interpreter route and may be emit some bytecode for some VM to run. Let's see how it goes.
 ####Case sensitivity####
 May be Talk should be case insensitive. That way, you can capitalize reserved words, such as 'if', if they occur at the beginning of a 'sentence' and keep them all small otherwise.
