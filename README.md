@@ -8,7 +8,7 @@ or
 
     GetFirst(2)ItemsIn(12, 2, 8, 33, 9)GreaterThan(10)
  
-It seems to me that this feature alone enable programs that are highly readable and expressive.
+I have a belief that this feature alone can enable programs that are highly readable and expressive.
  
 ####Some design ideas####
 Perhaps we can allow a function to be composed of interchangeable parts. For instance, in the example above, we can allow 'GreaterThan' to be substituted by 'LessThan' without the programmer having to declare two full declarations whose leading portions are identical. This will bring orthgonality to the design.
