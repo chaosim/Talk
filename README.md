@@ -35,6 +35,6 @@ An interesting consequence of this is that the period ('.') is no longer used in
 When the compiler/interpreter encounters a function call, it starts matching it character by character with a trie of function declarations it knows about. If there's a match, it compiles the call. Else it raises an error.
 
 ####Target language####
-Currently we're aiming to emit Python from the compiler. Alternatively, we can go the interpreter route and may be emit some bytecode for some VM to run. Let's see how it goes.
+Currently we're aiming to emit Python from the compiler. Alternatively, we could emit bytecode for some VM to run. Or, we could go the interpreter route. Let's see how it goes.
 ####Case sensitivity####
 May be Talk should be case insensitive. That way, you can capitalize reserved words, such as 'if', if they occur at the beginning of a 'sentence' and keep them all small otherwise.
