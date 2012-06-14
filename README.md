@@ -1,14 +1,16 @@
 Talk
 ====
 
-Talk is a programming language with the following defining feature: functions can be declared to accept arguments at any place not just at the end, something like this:
+Talk is a programming language with the following defining feature: functions can be declared to accept arguments at any place not just at the end.
+
+Something like this:
 
     (argument1)functionName(argument2)
-or
+or this:
 
     GetFirst(2)ItemsIn(12, 2, 8, 33, 9)GreaterThan(10)
  
-I have a belief that this feature alone can enable programs that are highly readable and expressive.
+A syntax like this, I believe, can enable programs that are highly readable and expressive.
  
 ####Some design ideas####
 Perhaps we can allow a function to be composed of interchangeable parts. For instance, in the example above, we can allow 'GreaterThan' to be substituted by 'LessThan' without the programmer having to declare two full declarations whose leading portions are identical. This will bring orthgonality to the design.
