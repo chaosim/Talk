@@ -1,14 +1,14 @@
 Talk
 ====
 
-Talk is a programming language with the following defining feature: functions can accept arguments at any place not just at the end. Like this:
+Talk is a programming language with the following defining feature: functions can accept arguments at any place not just at the end. Something like this:
 
     (argument1)functionName(argument2)
 Or this:
 
     GetFirst(2)ItemsIn(12, 2, 8, 33, 9)GreaterThan(10)
  
-This syntax, I believe, can enable programs that are highly readable and expressive.
+This unusual syntax, I believe, can enable programs that are highly readable and expressive.
 
 Talk is a work in progress.
  
