@@ -4,9 +4,11 @@ Talk
 Talk is a programming language with one defining feature: functions can accept arguments at any place not just at the end. 
 
 So while in most languages you have to call functions like this:
+
     functionName(argument1, argument2)
 
-In Talk let's declare functions so they can be called like this:
+Talk lets you declare functions that can be called like this:
+
     (argument1)functionName(argument2)
 
 Or this:
