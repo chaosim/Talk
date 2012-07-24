@@ -3,7 +3,7 @@ Talk
 
 Talk is a programming language with one defining feature: functions accept arguments at any place not just at the end. 
 
-In most languages you call functions like this:
+While in most languages you call functions like this:
 
     functionName(argument1, argument2)
 
