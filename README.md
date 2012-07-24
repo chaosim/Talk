@@ -26,7 +26,7 @@ So this is what's good about this syntax: you're not forced into unnatural conto
 
 ###Invocations###
 #####Aparenthesia#####
-Parenthesis are optional in when you invoke functions. So while you can call the above declared function like this:
+Parenthesis are optional when you invoke functions. So while the function declared above can be called like this:
 
     GetFirst(2)ItemsIn([2, 5, 1, 8, 0, 6, 3])GreaterThan(5)
 
@@ -39,7 +39,7 @@ Talk even allows you to insert spaces between words that make up a function name
 
     Get First 2 Items In [12, 2, 8, 33, 9] Greater Than 10
 
-Seeing this statement, the Talk compiler/interpreter will intelligently try to match it with one of the function declarations it has seen before.
+Upon seeing this statement, the Talk compiler/interpreter will intelligently try to match it with one of the function declarations it has seen before.
 
 #####Case oblivious#####
 Talk is a case insensitive language. So it lets you avoid the awkwardness of case in the preceding statement by letting you use a more natural capitalization. In other words, it's perfectly okay if you wrote the above like this:
@@ -56,22 +56,22 @@ Instead you use Talk's own peculiar syntax:
     
     AMethodOf(objectName)TakingAn(argument)
     
-Now an interesting consequence of this is that the period is freed up. So Talk goes ahead and it as the statement terminator. 
+Now an interesting consequence of this is that the period is freed up. So Talk goes ahead and repurposes it. For what? As the statement terminator. 
 
-With the period at the end, the preceding function call now becomes practically indistinguishable from an English sentence:
+Just what we needed to make our calls indistinguishable from an English sentence. With the period at the end, this is how the preceding function call looks:
 
     Get first 2 items in [12, 2, 8, 33, 9] greater than 10.
     
-Nice, isn't it?
+Nice, right?
 
 ###Big picture###
-As you can guess, the primary motivation behind talk is readability. It aims to be a language in which you can write programs that are so expressive that they are trivial to understand. It is partly inspired by Donald Knuth's [Literate Programming](http://en.wikipedia.org/wiki/Literate_programming) and the language Ruby. It also will borrow heavily from Python syntax-wise (indentation as block marker, for example, will fit nicely in the scheme of things).
+As you can guess, the primary motivation behind Talk is readability. It aims to be a language in which you can write programs that are so expressive that they are trivial to understand. It is partly inspired by Donald Knuth's [Literate Programming](http://en.wikipedia.org/wiki/Literate_programming) and the language Ruby. It also will borrow heavily from Python syntax-wise (indentation as block marker, for example, will fit nicely in the scheme of things).
 
 Talk is currently a work in progress and is in an extremely early stage (actually, it's merely an idea right now) .
  
 
 ###Implementation###
-How will we match an "exploded name" invocation with a function? When the compiler/interpreter encounters such a function call, it starts matching it character by character with a trie of function declarations it knows about. It ignores spaces as long as they are not around arguments. If there's a match, it compiles the call. Else it raises an error.
+How will we match an "exploded name" invocation with a function? When the compiler/interpreter encounters such a call, it starts matching it character by character with a trie of function declarations it knows about. It skips spaces as long as they are not around arguments. If there's a match, it compiles the call. Else it raises an error.
 
 We're currently aiming to emit Python from the compiler. Eventually we'll take the interpreter route. Let's see how it goes.
 
