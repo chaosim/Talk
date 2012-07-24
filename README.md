@@ -1,22 +1,38 @@
 Talk
 ====
 
-Talk is a programming language with one defining feature: functions accept arguments at any place not just at the end. 
+Talk is a programming language with one distinctive feature: functions accept arguments at any place not just at the end. While most languages require you to declare functions this way:
 
-While in most languages you call functions like this:
+    FunctionName(argument1, argument2)
 
-    functionName(argument1, argument2)
+In Talk you can do it like this:
 
-Talk lets you declare them so that can be called like this:
+    (argument1)FunctionName(argument2)
 
-    (argument1)functionName(argument2)
+###But what's the point?###
+Consider a function that takes a list of integers and returns the first N items greater than a certain integer T. In most languages, you write it like this:
+    
+    GetFirstGreaterThan(N, intList, T)
 
-Or, to given an example, like this:
+You might choose a different name, but without additional comments or a peek inside the implementation, it is hard to make sense of what this function does.
 
-    GetFirst(2)ItemsIn(12, 2, 8, 33, 9)GreaterThan(10)
- 
-This unusual syntax, I believe, can enable programs that are highly readable and expressive.
+Talk, on the other hand, lets you declare the same function this way:
 
+    GetFirst(N)ItemsIn(intList)GreaterThan(T)
+    
+This declaration is so clear and direct you don't need any comments. It reads like comment itself. 
+
+###Aparenthesia###
+Talk makes parenthesis optional in function invocations (just as Ruby does). While you can call the above function like this:
+
+    GetFirst(2)ItemsIn([2, 5, 1, 8, 0, 6, 3])GreaterThan(5)
+
+it's so much easier on the eye when you let go of the parenthesis:
+
+    GetFirst 2 ItemsIn [12, 2, 8, 33, 9] GreaterThan 10
+
+###Exploding
+As you can see, this call is starting to look a lot like an English sentence.
 Talk is currently a work in progress.
  
 ####Some design ideas####
