@@ -1,28 +1,28 @@
 Talk
 ====
 
-Talk is a programming language with one distinctive feature: functions accept arguments at any place not just at the end. While most languages require you declare functions this way:
+Talk is a programming language with one defining feature: functions accept arguments at any place not just at the end. While most languages require you to declare functions like this:
 
     FunctionName(argument1, argument2)
 
-Talk lets you do it like this:
+Talk is happy to let you do it this way:
 
     (argument1)FunctionName(argument2)
 
 ###What's so great about that?###
-Consider a function that takes a list of integers and returns the first N items greater than a certain integer T. In other languages, you'll write it like this:
+Consider a function that takes a list of integers and returns the first N items greater than a certain integer T. In other languages, you'll have to write:
     
     GetFirstGreaterThan(N, intList, T)
 
-You might choose a different name, but it'll end up being just as cryptic. Without additional comments or a peek inside the implementation, it is hard to make sense of what this function does.
+This is very hard to make sense of without additional comments or a peek into the implemention.
 
-Talk, on the other hand, allows you to declare the same function so:
+With Talk, you can declare the same function like this:
 
     GetFirst(N)ItemsIn(intList)GreaterThan(T)
     
-This declaration is so clear and direct you don't need any comments. It reads like comment itself. 
+Clear and direct. You don't need any comments. The declaration practically reads like a comment itself. 
 
-What this means is that Talk doesn't force you into unnatural contortions when writing functions. As you'll see below, Talk's function invocation syntax reinforces this philosophy even further.
+So this is what's good about this syntax: you're not forced into unnatural contortions to get your intent across. This makes for programs that are readable and expressive. As you'll see below, Talk's function invocation syntax reinforces this even further.
 
 ###Invocations###
 #####Aparenthesia#####
@@ -56,17 +56,16 @@ Instead you use Talk's own peculiar syntax:
     
     AMethodOf(objectName)TakingAn(argument)
     
-An interesting consequence of this is that the period is freed up. So Talk goes ahead and repurposes it as the statement terminator. 
+Now an interesting consequence of this is that the period is freed up. So Talk goes ahead and it as the statement terminator. 
 
-With the period append, the preceding function call now becomes:
+With the period at the end, the preceding function call now becomes practically indistinguishable from an English sentence:
 
     Get first 2 items in [12, 2, 8, 33, 9] greater than 10.
     
-This is practically indistinguishable from an English sentence. (There could be an ambiguity while parsing real numbers because they contain a decimal. But that ambiguity can be resolved by noting that the tokens on both sides of the decimal must be strings of digits.) 
-
+Nice, isn't it?
 
 ###Big picture###
-The motivation behind talk is readability. It aims to be a language in which you can write programs that are so expressive that they are trivial to understand. It is partly inspired by Donald Knuth's [Literate Programming](http://en.wikipedia.org/wiki/Literate_programming) and the language Ruby. It also will borrow heavily from Python syntax-wise (indentation as block marker, for example, will be a nice idea for us).
+As you can guess, the primary motivation behind talk is readability. It aims to be a language in which you can write programs that are so expressive that they are trivial to understand. It is partly inspired by Donald Knuth's [Literate Programming](http://en.wikipedia.org/wiki/Literate_programming) and the language Ruby. It also will borrow heavily from Python syntax-wise (indentation as block marker, for example, will fit nicely in the scheme of things).
 
 Talk is currently a work in progress and is in an extremely early stage (actually, it's merely an idea right now) .
  
