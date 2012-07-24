@@ -1,17 +1,17 @@
 Talk
 ====
 
-Talk is a programming language with one defining feature: functions can accept arguments at any place not just at the end. 
+Talk is a programming language with one defining feature: functions accept arguments at any place not just at the end. 
 
-So while in most languages you have to call functions like this:
+In most languages you call functions like this:
 
     functionName(argument1, argument2)
 
-Talk lets you declare functions that can be called like this:
+Talk lets you declare them so that can be called like this:
 
     (argument1)functionName(argument2)
 
-Or this:
+Or, to given an example, like this:
 
     GetFirst(2)ItemsIn(12, 2, 8, 33, 9)GreaterThan(10)
  
@@ -20,23 +20,20 @@ This unusual syntax, I believe, can enable programs that are highly readable and
 Talk is currently a work in progress.
  
 ####Some design ideas####
-Perhaps a function can be composed of interchangeable parts. For instance, in the example above, we should be able to substitute 'GreaterThan' with 'LessThan' without the programmer having to declare two full declarations whose leading parts overlap. This will make for nice orthogonality.
+\- Perhaps a function can be composed of interchangeable parts. For instance, in the example above, we should be able to substitute 'GreaterThan' with 'LessThan' without the programmer having to declare two full declarations whose leading parts overlap. This will make for nice orthogonality.
 
-Also, we could get rid of those parenthesis and perhaps allow spaces between words in the function name. That'll make the function call read like a sentence. For example:
+\- Also, we could get rid of those parenthesis and perhaps allow spaces between words in the function name. That'll make the function call read like a sentence. For example:
 
     Get first 2 items in [12, 2, 8, 33, 9] greater than 10
- 
-####Object orientation####
-We'll have classes in Talk, but we won’t have to calling their methods in the normal way:
+\- Object orientation: we'll have classes in Talk, but we won’t have to call their methods like this:
 
     objectName.functionName(arguments…)
-    
-Instead, we are free to call them using Talk's own peculiar syntax:
+
+Instead, we are free to use Talk's own peculiar syntax:
     
     AMethodOf(objectName)Taking(someArgument)ThatCanBeCalledInThis(“way”)
  
 An interesting consequence of this is that the period ('.') is no longer used in method calls. So we’re free to repurpose it. What if we use it as a statement terminator? It would be especially interesting to combine it with the above “spaces in function name” syntax and produce a thoroughly natural language like syntax. For example:
-
 
     Get first 2 items in [12, 2, 8, 33, 9] greater than 10.
  
