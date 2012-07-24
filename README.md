@@ -9,54 +9,73 @@ In Talk you can do it like this:
 
     (argument1)FunctionName(argument2)
 
-###But what's the point?###
+###What's so great about that?###
 Consider a function that takes a list of integers and returns the first N items greater than a certain integer T. In most languages, you write it like this:
     
     GetFirstGreaterThan(N, intList, T)
 
 You might choose a different name, but without additional comments or a peek inside the implementation, it is hard to make sense of what this function does.
 
-Talk, on the other hand, lets you declare the same function this way:
+Talk, on the other hand, lets you declare the same function so:
 
     GetFirst(N)ItemsIn(intList)GreaterThan(T)
     
-This declaration is so clear and direct you don't need any comments. It reads like comment itself. 
+This declaration is so clear and direct you don't need any comments. It reads like comment itself. This character of Talk becomes more apparent when you see below how function invocations work in it.
 
-###Aparenthesia###
-Talk makes parenthesis optional in function invocations (just as Ruby does). While you can call the above function like this:
+###Invocations###
+#####Aparenthesia#####
+Parenthesis are optional in function invocations. So while you can call the above declared function like this:
 
     GetFirst(2)ItemsIn([2, 5, 1, 8, 0, 6, 3])GreaterThan(5)
 
-it's so much easier on the eye when you let go of the parenthesis:
+it's so much easier on the eye if you leave parenthesis out:
 
     GetFirst 2 ItemsIn [12, 2, 8, 33, 9] GreaterThan 10
 
-###Exploding
-As you can see, this call is starting to look a lot like an English sentence.
-Talk is currently a work in progress.
- 
-####Some design ideas####
-\- Perhaps a function can be composed of interchangeable parts. For instance, in the example above, we should be able to substitute 'GreaterThan' with 'LessThan' without the programmer having to declare two full declarations whose leading parts overlap. This will make for nice orthogonality.
+#####Exploding function names#####
+Omitting parenthesis makes calls look a lot like English sentences. This is by design. In fact, Talk takes it even further by allow you insert spaces between words that make up a function name.
 
-\- Also, we could get rid of those parenthesis and perhaps allow spaces between words in the function name. That'll make the function call read like a sentence. For example:
+So, it'll actually be valid syntax if you wrote the above call this way instead:
+
+    Get First 2 Items In [12, 2, 8, 33, 9] Greater Than 10
+
+Seeing this statement, the Talk compiler/interpreter will intelligently try to match it with one of the function declarations it has seen before.
+
+#####Case oblivious#####
+Talk is a case insensitive language. So it lets you avoid the awkwardness in the preceding function call by letting you use a more natural capitalization. In other words, it's perfectly okay if you wrote the above like this:
 
     Get first 2 items in [12, 2, 8, 33, 9] greater than 10
-\- Object orientation: we'll have classes in Talk, but we won’t have to call their methods like this:
 
-    objectName.functionName(arguments…)
 
-Instead, we are free to use Talk's own peculiar syntax:
+####Classes####
+Talk supports object orientation but with one difference: you can't call methods on an object in the regular way:
     
-    AMethodOf(objectName)Taking(someArgument)ThatCanBeCalledInThis(“way”)
- 
-An interesting consequence of this is that the period ('.') is no longer used in method calls. So we’re free to repurpose it. What if we use it as a statement terminator? It would be especially interesting to combine it with the above “spaces in function name” syntax and produce a thoroughly natural language like syntax. For example:
+    objectName.functionName(argument)
+
+Instead you use Talk's own peculiar syntax:
+    
+    AMethodOf(objectName)TakingThis(argument)
+    
+#####Wither period#####
+An interesting consequence of the above is that the period, '.', is freed up. Talk uses it as a statement terminator. 
+
+With the period added, the preceding function looks like this:
 
     Get first 2 items in [12, 2, 8, 33, 9] greater than 10.
- 
-####Implementation####
-When the compiler/interpreter encounters a function call, it starts matching it character by character with a trie of function declarations it knows about. If there's a match, it compiles the call. Else it raises an error.
+    
+This is practically indistinguishable from an English sentence. There could be an ambiguity while parsing real numbers because they contain a decimal. But that ambiguity can be resolved by noting that the tokens on both sides of the decimal must be strings of digits. 
 
-####Target language####
+
+As you can see, the motivation behind talk is readability. It aims to be a language you can write programs that are so expressive that they are trivial to understand. It is partly insipired by Donald Knuth's Literate Programming and the programming language Ruby.
+
+Talk is currently a work in progress and is in an extremely early stage.
+ 
+
+###Implementation###
 Currently we're aiming to emit Python from the compiler. Alternatively, we could emit bytecode for some VM to run. Or, we could go the interpreter route. Let's see how it goes.
-####Case sensitivity####
-Talk should be case insensitive. That way, you can capitalize words in a function name, or keywords such as 'if', when they occur at the beginning of a 'sentence' and keep them all small otherwise.
+
+How will we match an "exploded name" invocation with a function? When the compiler/interpreter encounters such a function call, it starts matching it character by character with a trie of function declarations it knows about. It ignores spaces as long as they are not around arguments. If there's a match, it compiles the call. Else it raises an error.
+
+###Some design ideas###
+- Perhaps we can design a function to be composed of interchangeable parts. For instance, in the example above, we should be able to substitute 'GreaterThan' with 'LessThan' without the programmer having to declare two full declarations whose leading parts overlap. This will make for nice orthogonality.
+- \<Add the next one here\>
