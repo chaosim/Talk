@@ -48,11 +48,11 @@ Talk is a case insensitive language. So you can avoid the awkwardness of case in
 ####Classes and the period####
 Talk supports object orientation but with one difference: you can't call methods on an object in the regular way:
     
-    objectName.functionName(argument)
+    object.method(argument)
 
 Instead you use Talk's own peculiar syntax:
     
-    A method of objectName taking an argument
+    A method of object taking an argument
     
 An interesting consequence of this is that the period is freed up. So Talk goes ahead and repurposes it as the statement terminator. 
 
