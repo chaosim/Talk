@@ -18,10 +18,10 @@ With Talk, you can declare the same function this way:
 
     GetFirst(N)ItemsIn(intList)GreaterThan(T)
     
-which is simple and clear. You don't need any comments to understand it because it practically reads like comment itself. 
+This is simple and clear. You don't need any comments to understand it because it practically reads like comment itself. 
 
 ###Invocations###
-Talk's function invocation syntax takes expressiveness a step further. It offers a number of separate features which work together to make function calls look like English sentences: 
+Talk's function invocation syntax takes this expressiveness a step further. It offers a number of separate features which work together to make function calls look like English sentences: 
 
 #####Aparenthesia#####
 Parenthesis are optional when you invoke functions. So while the above function can be called like this:
@@ -33,11 +33,11 @@ you can leave parenthesis out and make it so much easier on the eye:
     GetFirst 2 ItemsIn [12, 2, 8, 33, 9] GreaterThan 10
 
 #####Exploding function names#####
-Talk allows you to insert spaces between words that make up a function name. So the above call can be written like this:
+Talk allows you to insert spaces between words that make up a function name. So the above call can be rewritten like this:
 
     Get First 2 Items In [12, 2, 8, 33, 9] Greater Than 10
 
-Upon seeing this statement, the the compiler/interpreter will intelligently try to match it with one of the function declarations it has seen before.
+Upon seeing this statement, the the compiler/interpreter will intelligently try to ignore spaces and match the call with one of the function declarations it has seen before.
 
 #####Case oblivious#####
 Talk is a case insensitive language. So you can avoid the awkwardness of case in the preceding statement by using a more natural capitalization. In other words, it's perfectly okay if you wrote the above statement like this instead:
@@ -52,7 +52,7 @@ Talk supports object orientation but with one difference: you can't call methods
 
 Instead you use Talk's own peculiar syntax:
     
-    AMethodOf(objectName)TakingAn(argument)
+    A method of objectName taking an argument
     
 An interesting consequence of this is that the period is freed up. So Talk goes ahead and repurposes it as the statement terminator. 
 
