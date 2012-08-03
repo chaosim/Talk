@@ -45,7 +45,7 @@ Talk is a case insensitive language. So you can avoid the awkwardness of case in
     Get first 2 items in [12, 2, 8, 33, 9] greater than 10
 
 
-####Classes and the period####
+#####Classes and the period#####
 Talk supports object orientation but with one difference: you can't call methods on an object in the regular way:
     
     object.method(argument)
