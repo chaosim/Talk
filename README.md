@@ -18,7 +18,7 @@ With Talk, you can declare the same function this way:
 
     GetFirst(N)ItemsIn(intList)GreaterThan(T)
     
-This is simple and clear. You don't need any comments to understand it because it practically reads like comment itself. 
+This is simple and clear. You don't need any comments to understand it because it practically reads like a comment itself. 
 
 ###Invocations###
 Talk's function invocation syntax takes this expressiveness a step further. It offers a number of separate features which work together to make function calls look like English sentences: 
@@ -56,11 +56,11 @@ Instead you use Talk's own peculiar syntax:
     
 An interesting consequence of this is that the period is freed up. So Talk goes ahead and repurposes it as the statement terminator. 
 
-Just what we needed. With the period at the end, the function call becomes indistinguishable from an English sentence:
+That's just what we needed. With the period at the end, the function call becomes indistinguishable from an English sentence:
 
     Get first 2 items in [12, 2, 8, 33, 9] greater than 10.
     
-Nice.
+Nice, isn't it?
 
 ###Big picture###
 As you can guess, the primary motivation behind Talk is readability. It aims to be a language in which you can write programs that are so expressive that they are trivial to understand. It is partly inspired by Donald Knuth's [Literate Programming](http://en.wikipedia.org/wiki/Literate_programming). Talk's function call syntax (optional parenthesis) comes from Ruby. Eventually it will also borrow heavily from Python (indentation as block marker, for example, will fit nicely in the scheme of things).
