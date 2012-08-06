@@ -67,7 +67,7 @@ As you can guess, the primary motivation behind Talk is readability. It aims to 
 
 As Paul Graham once [noted](http://paulgraham.com/langdes.html), brevity is an essential charaterisistic of a successful programming language. Talk seems to go completely against this notion. But that's not quite so because Talk does not _impose_ verbosity; it merely _allows_ it. So you are free to write and call functions in the traditional way, but sometimes a lot can be gained by shuffling your arguments around.
 
-Also, you often don't know how good a tool is until you've actually built it and used it. So Talk is also an experiement that tries to find out how practical a syntax like this can be.
+Also, you often don't know how good a tool is until you've actually built it and used it. So Talk is also an experiement that tries to find out how practical a syntax like this can be. It may well turn out to be good enough for general-purpose programming. Or, it might find a niche in areas such as executable specifications or DSLs.
 
 Talk is currently a work in progress and is in an extremely early stage (actually, it's merely an idea right now) .
 
