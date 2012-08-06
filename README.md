@@ -65,17 +65,25 @@ Nice, isn't it?
 ###Big picture###
 As you can guess, the primary motivation behind Talk is readability. It aims to be a language in which you can write programs that are so expressive that they are trivial to understand. It is partly inspired by Donald Knuth's [Literate Programming](http://en.wikipedia.org/wiki/Literate_programming). Talk's function call syntax (optional parenthesis) comes from Ruby. Eventually it will also borrow heavily from Python (indentation as block marker, for example, will fit nicely in the scheme of things).
 
-As Paul Graham once [noted](http://paulgraham.com/langdes.html), brevity is an essential charaterisistic of a successful programming language. Talk seems to go completely against this notion. But that's not quite so because Talk does not _impose_ verbosity; it merely _allows_ it. So you are free to write and call functions in the traditional way, but sometimes a lot can be gained by shuffling your arguments around.
+As [Paul Graham once noted](http://paulgraham.com/langdes.html), brevity is an essential attribute of a successful programming language. It would seem that Talk goes completely against this notion. But that's not true. Talk does not _impose_ verbosity; it merely _allows_ it. So you are free to write and call functions in the traditional way, but sometimes a lot can be gained by shuffling your arguments around.
 
 Also, you often don't know how good a tool is until you've actually built it and used it. So Talk is also an experiement that tries to find out how practical a syntax like this can be. It may well turn out to be good enough for general-purpose programming. Or, it might find a niche in areas such as executable specifications or DSLs.
 
 Talk is currently a work in progress and is in an extremely early stage (actually, it's merely an idea right now) .
 
 ###Implementation###
-How will we match an "exploded name" invocation with a function? When the compiler/interpreter encounters such a call, it starts matching it character by character with a trie of function declarations it knows about. It skips spaces as long as they are not around arguments. If there's a match, it compiles the call. Else it raises an error.
+Two big questions:
 
-We're currently aiming to emit Python from the compiler. Eventually we'll take the interpreter route. Let's see how it goes.
+#####What's this thing going to compile to?#####
+We're currently aiming to emit Python from the compiler. Eventually we should take the interpreter route. Let's see how it goes.
+
+#####How will the compiler match an "exploded name" invocation with a function?######
+*Brief answer:* when the compiler/interpreter encounters such a call, it starts matching it character by character with a trie of function declarations it knows about. It skips spaces as long as they are not around arguments. If there's a match, it compiles the call. Else it raises an error.
+
+*Long answer:* we'll try it and see what we come up with.
+
+
 
 ###Some design ideas###
-- Perhaps we can design a function to be composed of interchangeable parts. For instance, in the example above, we should be able to substitute 'GreaterThan' with 'LessThan' without the programmer having to declare two full declarations whose leading parts overlap. This will make for nice orthogonality.
+- Perhaps we can design a function to be composed of interchangeable parts. For instance, in the example above, we should be able to substitute 'GreaterThan' with 'LessThan' without the programmer having to declare two full declarations whose leading parts overlap. This will make for nice orthogonality. Perhaps we don't have to do anything special to achieve this.
 - \<Add the next one here\>
