@@ -85,5 +85,5 @@ We're currently aiming to emit Python from the compiler. Eventually we should ta
 
 
 ###Some design ideas###
-- Perhaps we can design a function to be composed of interchangeable parts. For instance, in the example above, we should be able to substitute 'GreaterThan' with 'LessThan' without the programmer having to declare two full declarations whose leading parts overlap. This will make for nice orthogonality. Perhaps we don't have to do anything special to achieve this.
+- Perhaps we can design a function to be composed of interchangeable parts. For instance, in the example above, we should be able to substitute 'GreaterThan' with 'LessThan' without the programmer having to declare two full declarations whose leading parts overlap. This will make for nice orthogonality.
 - \<Add the next one here\>
