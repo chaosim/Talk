@@ -65,7 +65,7 @@ Nice!
 ###Big picture###
 As you can guess, the primary motivation behind Talk is readability. It aims to be a language in which you can write programs that are so expressive that they are trivial to understand. It is partly inspired by Donald Knuth's [Literate Programming](http://en.wikipedia.org/wiki/Literate_programming). Talk's function call syntax (optional parenthesis) comes from Ruby. Eventually it will also borrow heavily from Python (indentation as block marker, for example, will fit nicely in the scheme of things).
 
-As [Paul Graham once noted](http://paulgraham.com/langdes.html), brevity is a necessary quality for the success of a programming language. It would seem that Talk goes completely against this notion. But that's not true. Talk does not _impose_ verbosity; it merely _allows_ it. So you are free to write and call functions in the traditional way, but sometimes a lot can be gained by shuffling your arguments around.
+As [Paul Graham once noted](http://paulgraham.com/langdes.html), brevity is a necessary quality for the success of a programming language. It would seem that Talk goes completely against this notion. But that's actually not true, because Talk does not _impose_ verbosity; it merely _allows_ it. So you are free to write and call functions in the traditional way, but sometimes a lot can be gained by shuffling your arguments around.
 
 Also, you often don't know how good a tool is until you've actually built it and used it. So Talk is also an experiement that tries to find out how practical a syntax like this can be. It may well turn out to be good enough for general-purpose programming. Or, it might find a niche in areas such as executable specifications or DSLs.
 
