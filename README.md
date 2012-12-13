@@ -10,7 +10,7 @@ Talk is happy to let you do it like this:
     (argument1)FunctionName(argument2)
 
 ###What's so great about that?###
-Consider a function that takes a list of integers and returns the first N items greater than a certain integer T. In other languages, you end up with a hard to understand declaration like this:
+Consider a function that returns the first N numbers from a list that are greater than a certain number T. In other languages, you end up with something hard to understand such as:
     
     GetFirstGreaterThan(N, intList, T)
     
@@ -40,7 +40,7 @@ When you call a function, Talk lets you insert spaces between words that make up
 Upon seeing this statement, the the compiler/interpreter will intelligently try to ignore spaces and match the call with one of the function declarations it has seen before.
 
 #####Case oblivious#####
-Function invocations are case-insensitive (although function _declarations_ are not). So you can avoid the awkwardness of case in the preceding statement by using a more natural capitalization:
+Function invocations are case-insensitive. So you can avoid the awkwardness of case in the preceding statement by using a more natural capitalization:
 
     Get first 2 items in [12, 2, 8, 33, 9] greater than 10
 
