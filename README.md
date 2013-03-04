@@ -1,24 +1,26 @@
 Talk
 ====
 
-Talk is a programming language with one unusual feature: functions accept arguments at any place not just at the end. In other words, while most languages force you to declare functions this way:
+Talk is a programming language with one defining feature: functions accept arguments at any place not just at the end. While in most languages you're forced to declare them like this:
 
     FunctionName(argument1, argument2)
 
-Talk is happy to let you do it like this:
+Talk is happy to let you do it this way:
 
     (argument1)FunctionName(argument2)
 
 ###What's so great about that?###
-Consider a function that returns the first N numbers from a list that are greater than a certain number T. In other languages, you end up with something hard to understand such as:
+Readability. 
+
+Consider a function that returns the first N numbers from a list greater than a certain number T. In other languages, you end up with something hard to understand such as this:
     
     GetFirstGreaterThan(N, intList, T)
     
-With Talk, you can declare the same function this way:
+With Talk, you can declare the same function the following way:
 
     GetFirst(N)ItemsIn(intList)GreaterThan(T)
     
-This is simple and clear. You don't need any comments to understand it because it practically reads like a comment itself. 
+which is simple and clear. You don't need any comments it because it practically reads like a comment itself. 
 
 ###Invocations###
 Talk's function invocation syntax takes this expressiveness a step further. It offers a number of independent features which work together to make function calls look like English sentences: 
