@@ -1,68 +1,68 @@
 Talk
 ====
 
-Talk is a programming language with one defining feature: functions accept arguments at any place not just at the end. While in most languages you're forced to declare them like this:
+Talk is a programming language with one defining feature: functions accept arguments at any place not just at the end. While most languages force you to declare functions this way:
 
     FunctionName(argument1, argument2)
 
-Talk is happy to let you do it this way:
+Talk is happy to let you do it like this:
 
     (argument1)FunctionName(argument2)
 
 ###What's so great about that?###
 Readability. 
 
-Consider a function that returns the first N numbers from a list greater than a certain number T. In other languages, you end up with something hard to understand such as this:
+Consider a function that returns the first N numbers from a list greater than a certain number T. Normally you'd end up with a hard to understand declaration like this:
     
     GetFirstGreaterThan(N, intList, T)
     
-With Talk, you can declare the same function the following way:
+But with Talk you can declare the same function as below:
 
     GetFirst(N)ItemsIn(intList)GreaterThan(T)
-    
-which is simple and clear. You don't need any comments it because it practically reads like a comment itself. 
+
+which makes your intent unambigously clear.
+
 
 ###Invocations###
-Talk's function invocation syntax takes this expressiveness a step further. It offers a number of independent features which work together to make function calls look like English sentences: 
+Talk takes this expressiveness further with its function invocation syntax which has the following features:
 
 #####Aparenthesia#####
-Parenthesis are optional when you invoke functions. So while the above function can be called like this:
+Parenthesis are optional when you invoke functions. So while the above-declared function can be called like this:
 
     GetFirst(2)ItemsIn([2, 5, 1, 8, 0, 6, 3])GreaterThan(5)
 
-you are allowed to leave parenthesis out and make it so much easier on the eye:
+it's okay to leave parenthesis out and invoke it thus:
 
     GetFirst 2 ItemsIn [12, 2, 8, 33, 9] GreaterThan 10
 
 #####Exploding function names#####
-When you call a function, Talk lets you insert spaces between words that make up the function's name. So the above call can be rewritten like this:
+When you call a function you may insert spaces between words that make up the function's name. The above call, therefore, can be rewritten like this:
 
     Get First 2 Items In [12, 2, 8, 33, 9] Greater Than 10
 
-Upon seeing this statement, the the compiler/interpreter will intelligently try to ignore spaces and match the call with one of the function declarations it has seen before.
+Seeing this statement the the compiler/interpreter will intelligently try to ignore spaces and match the call with one of the function declarations it has encountered before.
 
-#####Case oblivious#####
-Function invocations are case-insensitive. So you can avoid the awkwardness of case in the preceding statement by using a more natural capitalization:
+#####Case obliviousness#####
+Function invocations are case-insensitive. So the above call can be further modified to the one below which has a more natural case of an English sentence:
 
     Get first 2 items in [12, 2, 8, 33, 9] greater than 10
 
 
 #####Classes and the period#####
-Talk supports object orientation but with one difference: you can't call methods on an object in the regular way:
+Talk supports object orientation, but it doesn't let you call methods on an object in the normal way:
     
     object.method(argument)
 
-Instead you use Talk's own peculiar syntax:
+Instead you must use Talk's own peculiar syntax:
     
     A method of object taking an argument
     
-An interesting consequence is the period is freed up. So Talk goes ahead and repurposes it as the statement terminator. 
 
-Now with this final piece in place, a function call can end in a period and thus become indistinguishable from an English sentence:
+An interesting consequence of this is that the period is freed up. Talk, in its by now evident quest for naturalness, repurposes the period as a statementment terminator and the invocation becomes indistinguishable from an English sentence:
+
 
     Get first 2 items in [12, 2, 8, 33, 9] greater than 10.
     
-Nice!
 
 ###Big picture###
 As you can guess, the primary motivation behind Talk is readability. It aims to be a language in which you can write programs that are so expressive that they are trivial to understand. It is partly inspired by Donald Knuth's [Literate Programming](http://en.wikipedia.org/wiki/Literate_programming). Talk's function call syntax (optional parenthesis) comes from Ruby. Eventually it will also borrow heavily from Python (indentation as block marker, for example, will fit nicely in the scheme of things).
